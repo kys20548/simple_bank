@@ -1,0 +1,12 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries:
+        - "db/query/account.sql"
+        - "db/query/entry.sql"
+        - "db/query/transfer.sql"
+    schema: "db/query/schema.sql"
+    gen:
+      go:
+        package: "db"
+        out: "db/sqlc"
