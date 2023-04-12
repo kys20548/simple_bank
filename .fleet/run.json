@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "go-test",
+            "name": "Go configuration",
+            "goExecPath": "/usr/local/Cellar/go/1.20.2/libexec/bin/go",
+            "buildParams": ["$PROJECT_DIR$/db/sqlc/"],
+
+        }
+        
+    ]
+}
