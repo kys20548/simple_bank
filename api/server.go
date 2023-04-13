@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	db "simpleBank/db/sqlc"
+	db "github.com/kys20548/simpleBank/db/sqlc"
 )
 
 // Server serves HTTP requests for our banking service.

@@ -3,8 +3,8 @@ package main
 import (
 	"database/sql"
 	"log"
-	db "simpleBank/db/sqlc"
-	api "simpleBank/api"
+	db "github.com/kys20548/simpleBank/db/sqlc"
+	api "github.com/kys20548/simpleBank/api"
 	_ "github.com/lib/pq"
 )
 

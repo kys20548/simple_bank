@@ -1,4 +1,4 @@
-module simpleBank
+module github.com/kys20548/simpleBank
 
 go 1.20
 
