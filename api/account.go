@@ -24,15 +24,15 @@ func (server *Server) createAccount(ctx *gin.Context) {
 		Owner:    req.Owner,
 		Currency: req.Currency,
 		Balance:  0,
-		}
+	}
 
-		account, err := server.store.CreateAccount(ctx, arg)
-		if err != nil {
-			ctx.JSON(http.StatusInternalServerError, errorResponse(err))
-			return
-		}
+	account, err := server.store.CreateAccount(ctx, arg)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
 
-		ctx.JSON(http.StatusOK, account)
+	ctx.JSON(http.StatusOK, account)
 }
 
 type getAccountRequest struct {
@@ -75,13 +75,13 @@ func (server *Server) listAccount(ctx *gin.Context) {
 	arg := db.ListAccountsParams{
 		Limit:  req.PageSize,
 		Offset: (req.PageID - 1) * req.PageSize,
-		}
+	}
 
-		accounts, err := server.store.ListAccounts(ctx, arg)
-		if err != nil {
-			ctx.JSON(http.StatusInternalServerError, errorResponse(err))
-			return
-		}
+	accounts, err := server.store.ListAccounts(ctx, arg)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
 
-		ctx.JSON(http.StatusOK, accounts)
+	ctx.JSON(http.StatusOK, accounts)
 }
