@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"github.com/kys20548/simpleBank/db/util"
+	"github.com/kys20548/simple_Bank/db/util"
 	"testing"
 
 	"github.com/stretchr/testify/require"
