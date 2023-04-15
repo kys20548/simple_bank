@@ -6,7 +6,7 @@ import (
 
 	api "github.com/kys20548/simple_Bank/api"
 	db "github.com/kys20548/simple_Bank/db/sqlc"
-	"github.com/kys20548/simple_Bank/db/util"
+	"github.com/kys20548/simple_Bank/util"
 	_ "github.com/lib/pq"
 )
 
