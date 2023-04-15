@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
-	db "github.com/kys20548/simple_Bank/db/sqlc"
+	db "github.com/kys20548/simple_bank/db/sqlc"
 )
 
 // Server serves HTTP requests for our banking service.
@@ -21,6 +21,7 @@ func NewServer(store db.Store) *Server {
 		v.RegisterValidation("currency", validCurrency)
 	}
 	router.POST("/accounts", server.createAccount)
+	router.POST("/users", server.createUser)
 	router.GET("/accounts/:id", server.getAccount)
 	router.GET("/accounts", server.listAccount)
 

@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"log"
 
-	api "github.com/kys20548/simple_Bank/api"
-	db "github.com/kys20548/simple_Bank/db/sqlc"
-	"github.com/kys20548/simple_Bank/util"
+	api "github.com/kys20548/simple_bank/api"
+	db "github.com/kys20548/simple_bank/db/sqlc"
+	"github.com/kys20548/simple_bank/util"
 	_ "github.com/lib/pq"
 )
 

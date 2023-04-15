@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	db "github.com/kys20548/simple_Bank/db/sqlc"
+	db "github.com/kys20548/simple_bank/db/sqlc"
 )
 
 type transferRequest struct {
