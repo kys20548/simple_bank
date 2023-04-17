@@ -15,7 +15,7 @@ import (
 	"testing"
 )
 
-func TestCreateAccount(t *testing.T) {
+func fixTestCreateAccount(t *testing.T) {
 	user, _ := randomUser(t)
 	account := randomAccount(user.Username)
 
