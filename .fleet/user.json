@@ -1,0 +1,88 @@
+{
+  "keymap": [
+    {
+      "key": "alt-cmd-comma",
+      "trigger": "edit-keymap"
+    },
+    {
+      "key": "alt-up",
+      "trigger": "-expand-selection"
+    },
+    {
+      "key": "cmd-w",
+      "trigger": "expand-selection"
+    },
+    {
+      "key": "cmd-w",
+      "trigger": "-close-tab"
+    },
+    {
+      "key": "cmd-digit4",
+      "trigger": "jump-to-terminal"
+    },
+    {
+      "key": "alt-cmd-o",
+      "trigger": "toggle-recent-workspaces-popup"
+    },
+    {
+      "key": "alt-cmd-c",
+      "trigger": "close-window"
+    },
+    {
+      "key": "alt-cmd-o",
+      "trigger": "-show-goto-symbol-panel"
+    },
+    {
+      "key": "cmd-leftbracket",
+      "trigger": "-back"
+    },
+    {
+      "key": "cmd-rightbracket",
+      "trigger": "-forward"
+    },
+    {
+      "key": "alt-cmd-t",
+      "trigger": "close-all-tabs-but-active"
+    },
+    {
+      "key": "cmd-digit0",
+      "trigger": "-git/commit"
+    },
+    {
+      "key": "cmd-shift-oumlaut",
+      "trigger": "-prev-tab"
+    },
+    {
+      "key": "cmd-shift-leftbracket",
+      "trigger": "-prev-tab"
+    },
+    {
+      "key": "cmd-leftbracket",
+      "trigger": "prev-tab"
+    },
+    {
+      "key": "cmd-shift-aumlaut",
+      "trigger": "-next-tab"
+    },
+    {
+      "key": "cmd-shift-rightbracket",
+      "trigger": "-next-tab"
+    },
+    {
+      "key": "cmd-rightbracket",
+      "trigger": "next-tab"
+    },
+    {
+      "key": "alt-down",
+      "trigger": "-shrink-selection"
+    },
+    {
+      "key": "shift-cmd-w",
+      "trigger": "shrink-selection"
+    },
+    {
+      "key": "alt-cmd-comma",
+      "trigger": "edit-keymap"
+    }
+  ]
+}
