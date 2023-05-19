@@ -11,26 +11,26 @@ import (
 
 const createTransfer = `-- name: CreateTransfer :one
 INSERT INTO transfers (
-  from_account_id,to_amount_id,amount
+  from_account_id,to_account_id,amount
 ) VALUES (
   $1, $2,$3
 )
-RETURNING id, from_account_id, to_amount_id, amount, created_at
+RETURNING id, from_account_id, to_account_id, amount, created_at
 `
 
 type CreateTransferParams struct {
 	FromAccountID int64 `json:"from_account_id"`
-	ToAmountID    int64 `json:"to_amount_id"`
+	ToAccountID   int64 `json:"to_account_id"`
 	Amount        int64 `json:"amount"`
 }
 
 func (q *Queries) CreateTransfer(ctx context.Context, arg CreateTransferParams) (Transfer, error) {
-	row := q.db.QueryRowContext(ctx, createTransfer, arg.FromAccountID, arg.ToAmountID, arg.Amount)
+	row := q.db.QueryRowContext(ctx, createTransfer, arg.FromAccountID, arg.ToAccountID, arg.Amount)
 	var i Transfer
 	err := row.Scan(
 		&i.ID,
 		&i.FromAccountID,
-		&i.ToAmountID,
+		&i.ToAccountID,
 		&i.Amount,
 		&i.CreatedAt,
 	)
@@ -48,7 +48,7 @@ func (q *Queries) DeleteTransfer(ctx context.Context, id int64) error {
 }
 
 const getTransfer = `-- name: GetTransfer :one
-SELECT id, from_account_id, to_amount_id, amount, created_at FROM transfers
+SELECT id, from_account_id, to_account_id, amount, created_at FROM transfers
 WHERE id = $1 LIMIT 1
 `
 
@@ -58,7 +58,7 @@ func (q *Queries) GetTransfer(ctx context.Context, id int64) (Transfer, error) {
 	err := row.Scan(
 		&i.ID,
 		&i.FromAccountID,
-		&i.ToAmountID,
+		&i.ToAccountID,
 		&i.Amount,
 		&i.CreatedAt,
 	)
@@ -66,7 +66,7 @@ func (q *Queries) GetTransfer(ctx context.Context, id int64) (Transfer, error) {
 }
 
 const listTransfers = `-- name: ListTransfers :many
-SELECT id, from_account_id, to_amount_id, amount, created_at FROM transfers
+SELECT id, from_account_id, to_account_id, amount, created_at FROM transfers
 ORDER BY id
 LIMIT $1
 OFFSET $2
@@ -89,7 +89,7 @@ func (q *Queries) ListTransfers(ctx context.Context, arg ListTransfersParams) ([
 		if err := rows.Scan(
 			&i.ID,
 			&i.FromAccountID,
-			&i.ToAmountID,
+			&i.ToAccountID,
 			&i.Amount,
 			&i.CreatedAt,
 		); err != nil {
