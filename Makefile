@@ -24,6 +24,8 @@ server:
 	go run main.go
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/kys20548/simple_bank/db/sqlc Store
+	mockgen -package mockwk -destination worker/mock/distributor.go github.com/kys20548/simple_bank/worker TaskDistributor
+
 proto:
 	rm -f pb/*.go
 	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
